@@ -3,6 +3,26 @@
   "WorkspaceRootPath": "E:\\Projects\\VSC C#\\Bank-Project\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{00BA9F6C-AECD-4C94-ABC2-DFE7580DF952}|Bank-Project.csproj|e:\\projects\\vsc c#\\bank-project\\view\\currencyexchange.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{00BA9F6C-AECD-4C94-ABC2-DFE7580DF952}|Bank-Project.csproj|solutionrelative:view\\currencyexchange.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00BA9F6C-AECD-4C94-ABC2-DFE7580DF952}|Bank-Project.csproj|e:\\projects\\vsc c#\\bank-project\\view\\manageusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{00BA9F6C-AECD-4C94-ABC2-DFE7580DF952}|Bank-Project.csproj|solutionrelative:view\\manageusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00BA9F6C-AECD-4C94-ABC2-DFE7580DF952}|Bank-Project.csproj|e:\\projects\\vsc c#\\bank-project\\view\\transactionsscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{00BA9F6C-AECD-4C94-ABC2-DFE7580DF952}|Bank-Project.csproj|solutionrelative:view\\transactionsscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00BA9F6C-AECD-4C94-ABC2-DFE7580DF952}|Bank-Project.csproj|E:\\Projects\\VSC C#\\Bank-Project\\view\\manageclients.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{00BA9F6C-AECD-4C94-ABC2-DFE7580DF952}|Bank-Project.csproj|solutionrelative:view\\manageclients.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00BA9F6C-AECD-4C94-ABC2-DFE7580DF952}|Bank-Project.csproj|E:\\Projects\\VSC C#\\Bank-Project\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{00BA9F6C-AECD-4C94-ABC2-DFE7580DF952}|Bank-Project.csproj|solutionrelative:mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{00BA9F6C-AECD-4C94-ABC2-DFE7580DF952}|Bank-Project.csproj|e:\\projects\\vsc c#\\bank-project\\loginscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{00BA9F6C-AECD-4C94-ABC2-DFE7580DF952}|Bank-Project.csproj|solutionrelative:loginscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
@@ -14,22 +34,82 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 6,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "LoginScreen.cs [Design]",
               "DocumentMoniker": "E:\\Projects\\VSC C#\\Bank-Project\\LoginScreen.cs",
               "RelativeDocumentMoniker": "LoginScreen.cs",
               "ToolTip": "E:\\Projects\\VSC C#\\Bank-Project\\LoginScreen.cs [Design]",
               "RelativeToolTip": "LoginScreen.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-08T06:21:57.607Z",
+              "WhenOpened": "2024-08-11T06:54:25.401Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainMenu.cs [Design]",
+              "DocumentMoniker": "E:\\Projects\\VSC C#\\Bank-Project\\MainMenu.cs",
+              "RelativeDocumentMoniker": "MainMenu.cs",
+              "ToolTip": "E:\\Projects\\VSC C#\\Bank-Project\\MainMenu.cs [Design]",
+              "RelativeToolTip": "MainMenu.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-08T16:41:27.584Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ManageClients.cs [Design]",
+              "DocumentMoniker": "E:\\Projects\\VSC C#\\Bank-Project\\View\\ManageClients.cs",
+              "RelativeDocumentMoniker": "View\\ManageClients.cs",
+              "ToolTip": "E:\\Projects\\VSC C#\\Bank-Project\\View\\ManageClients.cs [Design]",
+              "RelativeToolTip": "View\\ManageClients.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-10T14:14:25.332Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TransactionsScreen.cs [Design]",
+              "DocumentMoniker": "E:\\Projects\\VSC C#\\Bank-Project\\View\\TransactionsScreen.cs",
+              "RelativeDocumentMoniker": "View\\TransactionsScreen.cs",
+              "ToolTip": "E:\\Projects\\VSC C#\\Bank-Project\\View\\TransactionsScreen.cs [Design]",
+              "RelativeToolTip": "View\\TransactionsScreen.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-11T06:54:56.99Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ManageUsers.cs [Design]",
+              "DocumentMoniker": "E:\\Projects\\VSC C#\\Bank-Project\\View\\ManageUsers.cs",
+              "RelativeDocumentMoniker": "View\\ManageUsers.cs",
+              "ToolTip": "E:\\Projects\\VSC C#\\Bank-Project\\View\\ManageUsers.cs [Design]",
+              "RelativeToolTip": "View\\ManageUsers.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-11T06:54:53.474Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CurrencyExchange.cs [Design]",
+              "DocumentMoniker": "E:\\Projects\\VSC C#\\Bank-Project\\View\\CurrencyExchange.cs",
+              "RelativeDocumentMoniker": "View\\CurrencyExchange.cs",
+              "ToolTip": "E:\\Projects\\VSC C#\\Bank-Project\\View\\CurrencyExchange.cs [Design]",
+              "RelativeToolTip": "View\\CurrencyExchange.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-09T14:29:41.586Z",
               "EditorCaption": " [Design]"
             }
           ]
