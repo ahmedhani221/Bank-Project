@@ -29,20 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
-            "A101",
-            "1234",
-            "Ahmed Hani",
-            "ahmedhani205@gmail.com",
-            "+20 1276698108",
-            "1000"}, -1);
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbLayout = new System.Windows.Forms.GroupBox();
             this.lbldateTime = new System.Windows.Forms.Label();
             this.BankPicBox = new System.Windows.Forms.PictureBox();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabControlClients = new System.Windows.Forms.TabControl();
             this.tpShowClients = new System.Windows.Forms.TabPage();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBoxClientSearch = new System.Windows.Forms.TextBox();
             this.gbSort = new System.Windows.Forms.GroupBox();
             this.rbDescend = new System.Windows.Forms.RadioButton();
             this.rbAscend = new System.Windows.Forms.RadioButton();
@@ -54,6 +47,11 @@
             this.colEmail = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colPhoneNum = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colBalance = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.CMSClients = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.depositToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.withdrawToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.transferToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tpAddClient = new System.Windows.Forms.TabPage();
             this.btnAddNewClient = new System.Windows.Forms.Button();
             this.numAddClientBalance = new System.Windows.Forms.NumericUpDown();
@@ -71,7 +69,7 @@
             this.txtAddClientAccNo = new System.Windows.Forms.TextBox();
             this.tpUpdateClient = new System.Windows.Forms.TabPage();
             this.cbUpdateClientAccNo = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.numUpdateClientBalance = new System.Windows.Forms.NumericUpDown();
             this.maskedTxtUpdateClientPhone = new System.Windows.Forms.MaskedTextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -85,37 +83,33 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.ClientInfoErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.depositToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.withdrawToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.transferToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox1.SuspendLayout();
+            this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gbLayout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BankPicBox)).BeginInit();
-            this.tabControl1.SuspendLayout();
+            this.tabControlClients.SuspendLayout();
             this.tpShowClients.SuspendLayout();
             this.gbSort.SuspendLayout();
+            this.CMSClients.SuspendLayout();
             this.tpAddClient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numAddClientBalance)).BeginInit();
             this.tpUpdateClient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numUpdateClientBalance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClientInfoErrorProvider)).BeginInit();
-            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // gbLayout
             // 
-            this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.groupBox1.Controls.Add(this.lbldateTime);
-            this.groupBox1.Controls.Add(this.BankPicBox);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupBox1.Font = new System.Drawing.Font("Bahnschrift", 8F);
-            this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(230, 688);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
+            this.gbLayout.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.gbLayout.Controls.Add(this.lbldateTime);
+            this.gbLayout.Controls.Add(this.BankPicBox);
+            this.gbLayout.Dock = System.Windows.Forms.DockStyle.Left;
+            this.gbLayout.Font = new System.Drawing.Font("Bahnschrift", 8F);
+            this.gbLayout.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.gbLayout.Location = new System.Drawing.Point(0, 0);
+            this.gbLayout.Name = "gbLayout";
+            this.gbLayout.Size = new System.Drawing.Size(230, 688);
+            this.gbLayout.TabIndex = 1;
+            this.gbLayout.TabStop = false;
             // 
             // lbldateTime
             // 
@@ -136,23 +130,23 @@
             this.BankPicBox.TabIndex = 0;
             this.BankPicBox.TabStop = false;
             // 
-            // tabControl1
+            // tabControlClients
             // 
-            this.tabControl1.Controls.Add(this.tpShowClients);
-            this.tabControl1.Controls.Add(this.tpAddClient);
-            this.tabControl1.Controls.Add(this.tpUpdateClient);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Font = new System.Drawing.Font("Bahnschrift Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(230, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1052, 688);
-            this.tabControl1.TabIndex = 2;
+            this.tabControlClients.Controls.Add(this.tpShowClients);
+            this.tabControlClients.Controls.Add(this.tpAddClient);
+            this.tabControlClients.Controls.Add(this.tpUpdateClient);
+            this.tabControlClients.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlClients.Font = new System.Drawing.Font("Bahnschrift Light", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControlClients.Location = new System.Drawing.Point(230, 0);
+            this.tabControlClients.Name = "tabControlClients";
+            this.tabControlClients.SelectedIndex = 0;
+            this.tabControlClients.Size = new System.Drawing.Size(1052, 688);
+            this.tabControlClients.TabIndex = 2;
             // 
             // tpShowClients
             // 
             this.tpShowClients.Controls.Add(this.label16);
-            this.tpShowClients.Controls.Add(this.textBox1);
+            this.tpShowClients.Controls.Add(this.txtBoxClientSearch);
             this.tpShowClients.Controls.Add(this.gbSort);
             this.tpShowClients.Controls.Add(this.lblNumOfClients);
             this.tpShowClients.Controls.Add(this.ListViewClients);
@@ -176,12 +170,13 @@
             this.label16.TabIndex = 9;
             this.label16.Text = "Search By Acc. No.";
             // 
-            // textBox1
+            // txtBoxClientSearch
             // 
-            this.textBox1.Location = new System.Drawing.Point(27, 96);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(220, 28);
-            this.textBox1.TabIndex = 3;
+            this.txtBoxClientSearch.Location = new System.Drawing.Point(27, 96);
+            this.txtBoxClientSearch.Name = "txtBoxClientSearch";
+            this.txtBoxClientSearch.Size = new System.Drawing.Size(220, 28);
+            this.txtBoxClientSearch.TabIndex = 3;
+            this.txtBoxClientSearch.TextChanged += new System.EventHandler(this.txtBoxClientSearch_TextChanged);
             // 
             // gbSort
             // 
@@ -244,12 +239,15 @@
             this.colEmail,
             this.colPhoneNum,
             this.colBalance});
+            this.ListViewClients.ContextMenuStrip = this.CMSClients;
             this.ListViewClients.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.ListViewClients.Font = new System.Drawing.Font("Bahnschrift Light", 12F);
+            this.ListViewClients.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.ListViewClients.FullRowSelect = true;
             this.ListViewClients.GridLines = true;
             this.ListViewClients.HideSelection = false;
-            this.ListViewClients.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
             this.ListViewClients.Location = new System.Drawing.Point(3, 214);
+            this.ListViewClients.MultiSelect = false;
             this.ListViewClients.Name = "ListViewClients";
             this.ListViewClients.Size = new System.Drawing.Size(1038, 437);
             this.ListViewClients.TabIndex = 0;
@@ -259,12 +257,12 @@
             // colAccNum
             // 
             this.colAccNum.Text = "Account Num";
-            this.colAccNum.Width = 118;
+            this.colAccNum.Width = 136;
             // 
             // colPinCode
             // 
             this.colPinCode.Text = "Pin Code";
-            this.colPinCode.Width = 79;
+            this.colPinCode.Width = 95;
             // 
             // colName
             // 
@@ -284,7 +282,47 @@
             // colBalance
             // 
             this.colBalance.Text = "Balance(EGP)";
-            this.colBalance.Width = 120;
+            this.colBalance.Width = 140;
+            // 
+            // CMSClients
+            // 
+            this.CMSClients.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.CMSClients.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.depositToolStripMenuItem,
+            this.withdrawToolStripMenuItem,
+            this.transferToolStripMenuItem,
+            this.updateToolStripMenuItem,
+            this.deleteToolStripMenuItem});
+            this.CMSClients.Name = "contextMenuStrip1";
+            this.CMSClients.Size = new System.Drawing.Size(143, 124);
+            // 
+            // depositToolStripMenuItem
+            // 
+            this.depositToolStripMenuItem.Name = "depositToolStripMenuItem";
+            this.depositToolStripMenuItem.Size = new System.Drawing.Size(142, 24);
+            this.depositToolStripMenuItem.Text = "Deposit";
+            this.depositToolStripMenuItem.Click += new System.EventHandler(this.depositToolStripMenuItem_Click);
+            // 
+            // withdrawToolStripMenuItem
+            // 
+            this.withdrawToolStripMenuItem.Name = "withdrawToolStripMenuItem";
+            this.withdrawToolStripMenuItem.Size = new System.Drawing.Size(142, 24);
+            this.withdrawToolStripMenuItem.Text = "Withdraw";
+            this.withdrawToolStripMenuItem.Click += new System.EventHandler(this.withdrawToolStripMenuItem_Click);
+            // 
+            // transferToolStripMenuItem
+            // 
+            this.transferToolStripMenuItem.Name = "transferToolStripMenuItem";
+            this.transferToolStripMenuItem.Size = new System.Drawing.Size(142, 24);
+            this.transferToolStripMenuItem.Text = "Transfer";
+            this.transferToolStripMenuItem.Click += new System.EventHandler(this.transferToolStripMenuItem_Click);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(142, 24);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // tpAddClient
             // 
@@ -326,6 +364,7 @@
             // 
             // numAddClientBalance
             // 
+            this.numAddClientBalance.DecimalPlaces = 4;
             this.numAddClientBalance.Location = new System.Drawing.Point(650, 435);
             this.numAddClientBalance.Maximum = new decimal(new int[] {
             9999999,
@@ -335,6 +374,7 @@
             this.numAddClientBalance.Name = "numAddClientBalance";
             this.numAddClientBalance.Size = new System.Drawing.Size(250, 28);
             this.numAddClientBalance.TabIndex = 21;
+            this.numAddClientBalance.ValueChanged += new System.EventHandler(this.numAddClientBalance_ValueChanged);
             // 
             // txtAddClientPhone
             // 
@@ -343,6 +383,7 @@
             this.txtAddClientPhone.Name = "txtAddClientPhone";
             this.txtAddClientPhone.Size = new System.Drawing.Size(250, 28);
             this.txtAddClientPhone.TabIndex = 20;
+            this.txtAddClientPhone.TextChanged += new System.EventHandler(this.txtAddClientPhone_TextChanged);
             this.txtAddClientPhone.Validating += new System.ComponentModel.CancelEventHandler(this.ClientMaskedTxtBox_Validating);
             // 
             // label7
@@ -373,6 +414,7 @@
             this.txtAddClientEmail.Name = "txtAddClientEmail";
             this.txtAddClientEmail.Size = new System.Drawing.Size(250, 28);
             this.txtAddClientEmail.TabIndex = 15;
+            this.txtAddClientEmail.TextChanged += new System.EventHandler(this.txtAddClientEmail_TextChanged);
             this.txtAddClientEmail.Validating += new System.ComponentModel.CancelEventHandler(this.ClientTxtBox_Validating);
             // 
             // label6
@@ -403,6 +445,7 @@
             this.txtAddClientName.Name = "txtAddClientName";
             this.txtAddClientName.Size = new System.Drawing.Size(250, 28);
             this.txtAddClientName.TabIndex = 12;
+            this.txtAddClientName.TextChanged += new System.EventHandler(this.txtAddClientName_TextChanged);
             this.txtAddClientName.Validating += new System.ComponentModel.CancelEventHandler(this.ClientTxtBox_Validating);
             // 
             // label4
@@ -422,6 +465,7 @@
             this.txtAddClientPin.Name = "txtAddClientPin";
             this.txtAddClientPin.Size = new System.Drawing.Size(250, 28);
             this.txtAddClientPin.TabIndex = 10;
+            this.txtAddClientPin.TextChanged += new System.EventHandler(this.txtAddClientPin_TextChanged);
             this.txtAddClientPin.Validating += new System.ComponentModel.CancelEventHandler(this.ClientTxtBox_Validating);
             // 
             // label1
@@ -452,12 +496,13 @@
             this.txtAddClientAccNo.Name = "txtAddClientAccNo";
             this.txtAddClientAccNo.Size = new System.Drawing.Size(250, 28);
             this.txtAddClientAccNo.TabIndex = 7;
+            this.txtAddClientAccNo.TextChanged += new System.EventHandler(this.txtAddClientAccNo_TextChanged);
             this.txtAddClientAccNo.Validating += new System.ComponentModel.CancelEventHandler(this.ClientTxtBox_Validating);
             // 
             // tpUpdateClient
             // 
             this.tpUpdateClient.Controls.Add(this.cbUpdateClientAccNo);
-            this.tpUpdateClient.Controls.Add(this.button1);
+            this.tpUpdateClient.Controls.Add(this.btnUpdate);
             this.tpUpdateClient.Controls.Add(this.numUpdateClientBalance);
             this.tpUpdateClient.Controls.Add(this.maskedTxtUpdateClientPhone);
             this.tpUpdateClient.Controls.Add(this.label9);
@@ -479,27 +524,32 @@
             // 
             // cbUpdateClientAccNo
             // 
+            this.cbUpdateClientAccNo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbUpdateClientAccNo.FormattingEnabled = true;
             this.cbUpdateClientAccNo.Location = new System.Drawing.Point(147, 238);
             this.cbUpdateClientAccNo.Name = "cbUpdateClientAccNo";
             this.cbUpdateClientAccNo.Size = new System.Drawing.Size(250, 29);
             this.cbUpdateClientAccNo.TabIndex = 37;
+            this.cbUpdateClientAccNo.SelectedValueChanged += new System.EventHandler(this.cbUpdateClientAccNo_SelectedValueChanged);
             // 
-            // button1
+            // btnUpdate
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Bahnschrift Light", 16F);
-            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button1.Location = new System.Drawing.Point(410, 531);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(226, 47);
-            this.button1.TabIndex = 36;
-            this.button1.Text = "Update Client";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnUpdate.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("Bahnschrift Light", 16F);
+            this.btnUpdate.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnUpdate.Location = new System.Drawing.Point(410, 531);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(226, 47);
+            this.btnUpdate.TabIndex = 36;
+            this.btnUpdate.Text = "Update Client";
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // numUpdateClientBalance
             // 
+            this.numUpdateClientBalance.DecimalPlaces = 4;
+            this.numUpdateClientBalance.Enabled = false;
             this.numUpdateClientBalance.Location = new System.Drawing.Point(651, 437);
             this.numUpdateClientBalance.Maximum = new decimal(new int[] {
             9999999,
@@ -512,11 +562,13 @@
             // 
             // maskedTxtUpdateClientPhone
             // 
+            this.maskedTxtUpdateClientPhone.Enabled = false;
             this.maskedTxtUpdateClientPhone.Location = new System.Drawing.Point(147, 436);
             this.maskedTxtUpdateClientPhone.Mask = "+20 0000000000";
             this.maskedTxtUpdateClientPhone.Name = "maskedTxtUpdateClientPhone";
             this.maskedTxtUpdateClientPhone.Size = new System.Drawing.Size(250, 28);
             this.maskedTxtUpdateClientPhone.TabIndex = 34;
+            this.maskedTxtUpdateClientPhone.Validating += new System.ComponentModel.CancelEventHandler(this.ClientMaskedTxtBox_Validating);
             // 
             // label9
             // 
@@ -542,10 +594,13 @@
             // 
             // txtUpdateClientEmail
             // 
+            this.txtUpdateClientEmail.Enabled = false;
             this.txtUpdateClientEmail.Location = new System.Drawing.Point(651, 332);
             this.txtUpdateClientEmail.Name = "txtUpdateClientEmail";
             this.txtUpdateClientEmail.Size = new System.Drawing.Size(250, 28);
             this.txtUpdateClientEmail.TabIndex = 31;
+            this.txtUpdateClientEmail.TextChanged += new System.EventHandler(this.txtUpdateClientEmail_TextChanged);
+            this.txtUpdateClientEmail.Validating += new System.ComponentModel.CancelEventHandler(this.ClientTxtBox_Validating);
             // 
             // label11
             // 
@@ -571,10 +626,12 @@
             // 
             // txtUpdateClientName
             // 
+            this.txtUpdateClientName.Enabled = false;
             this.txtUpdateClientName.Location = new System.Drawing.Point(147, 332);
             this.txtUpdateClientName.Name = "txtUpdateClientName";
             this.txtUpdateClientName.Size = new System.Drawing.Size(250, 28);
             this.txtUpdateClientName.TabIndex = 28;
+            this.txtUpdateClientName.Validating += new System.ComponentModel.CancelEventHandler(this.ClientTxtBox_Validating);
             // 
             // label13
             // 
@@ -589,6 +646,7 @@
             // 
             // txtUpdateClientPin
             // 
+            this.txtUpdateClientPin.Enabled = false;
             this.txtUpdateClientPin.Location = new System.Drawing.Point(651, 238);
             this.txtUpdateClientPin.Name = "txtUpdateClientPin";
             this.txtUpdateClientPin.Size = new System.Drawing.Size(250, 28);
@@ -620,60 +678,33 @@
             // 
             this.ClientInfoErrorProvider.ContainerControl = this;
             // 
-            // contextMenuStrip1
+            // updateToolStripMenuItem
             // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.depositToolStripMenuItem,
-            this.withdrawToolStripMenuItem,
-            this.transferToolStripMenuItem,
-            this.deleteToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(143, 100);
-            // 
-            // depositToolStripMenuItem
-            // 
-            this.depositToolStripMenuItem.Name = "depositToolStripMenuItem";
-            this.depositToolStripMenuItem.Size = new System.Drawing.Size(142, 24);
-            this.depositToolStripMenuItem.Text = "Deposit";
-            // 
-            // withdrawToolStripMenuItem
-            // 
-            this.withdrawToolStripMenuItem.Name = "withdrawToolStripMenuItem";
-            this.withdrawToolStripMenuItem.Size = new System.Drawing.Size(142, 24);
-            this.withdrawToolStripMenuItem.Text = "Withdraw";
-            // 
-            // transferToolStripMenuItem
-            // 
-            this.transferToolStripMenuItem.Name = "transferToolStripMenuItem";
-            this.transferToolStripMenuItem.Size = new System.Drawing.Size(142, 24);
-            this.transferToolStripMenuItem.Text = "Transfer";
-            // 
-            // deleteToolStripMenuItem
-            // 
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(142, 24);
-            this.deleteToolStripMenuItem.Text = "Delete";
+            this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(142, 24);
+            this.updateToolStripMenuItem.Text = "Update";
+            this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
             // 
             // ManageClients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1282, 688);
-            this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.tabControlClients);
+            this.Controls.Add(this.gbLayout);
             this.Name = "ManageClients";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManageClients";
             this.Load += new System.EventHandler(this.ManageClients_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbLayout.ResumeLayout(false);
+            this.gbLayout.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BankPicBox)).EndInit();
-            this.tabControl1.ResumeLayout(false);
+            this.tabControlClients.ResumeLayout(false);
             this.tpShowClients.ResumeLayout(false);
             this.tpShowClients.PerformLayout();
             this.gbSort.ResumeLayout(false);
             this.gbSort.PerformLayout();
+            this.CMSClients.ResumeLayout(false);
             this.tpAddClient.ResumeLayout(false);
             this.tpAddClient.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numAddClientBalance)).EndInit();
@@ -681,17 +712,16 @@
             this.tpUpdateClient.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numUpdateClientBalance)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClientInfoErrorProvider)).EndInit();
-            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbLayout;
         private System.Windows.Forms.Label lbldateTime;
         private System.Windows.Forms.PictureBox BankPicBox;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tabControlClients;
         private System.Windows.Forms.TabPage tpShowClients;
         private System.Windows.Forms.TabPage tpAddClient;
         private System.Windows.Forms.TabPage tpUpdateClient;
@@ -718,7 +748,7 @@
         private System.Windows.Forms.ErrorProvider ClientInfoErrorProvider;
         private System.Windows.Forms.NumericUpDown numAddClientBalance;
         private System.Windows.Forms.Button btnAddNewClient;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.NumericUpDown numUpdateClientBalance;
         private System.Windows.Forms.MaskedTextBox maskedTxtUpdateClientPhone;
         private System.Windows.Forms.Label label9;
@@ -736,11 +766,12 @@
         private System.Windows.Forms.RadioButton rbAscend;
         private System.Windows.Forms.RadioButton rbDescend;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.TextBox txtBoxClientSearch;
+        private System.Windows.Forms.ContextMenuStrip CMSClients;
         private System.Windows.Forms.ToolStripMenuItem depositToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem withdrawToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem transferToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
     }
 }

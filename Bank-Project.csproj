@@ -132,5 +132,11 @@
   <ItemGroup>
     <None Include="Properties\BankPic.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CoreClassLib\CoreClassLib.csproj">
+      <Project>{4a3e3ef6-c90d-4817-b066-998435504f19}</Project>
+      <Name>CoreClassLib</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

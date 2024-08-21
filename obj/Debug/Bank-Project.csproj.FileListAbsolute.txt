@@ -16,3 +16,5 @@ E:\Projects\VSC C#\Bank-Project\obj\Debug\Bank_Project.TransactionsScreen.resour
 E:\Projects\VSC C#\Bank-Project\bin\Debug\CircularProgressBar.dll
 E:\Projects\VSC C#\Bank-Project\bin\Debug\CircularProgressBar.xml
 E:\Projects\VSC C#\Bank-Project\obj\Debug\Bank-Pro.D4F6BE8A.Up2Date
+E:\Projects\VSC C#\Bank-Project\bin\Debug\CoreClassLib.dll
+E:\Projects\VSC C#\Bank-Project\bin\Debug\CoreClassLib.pdb

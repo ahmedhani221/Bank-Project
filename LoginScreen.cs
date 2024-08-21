@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Linq.Expressions;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using CoreClassLib;
 
 namespace Bank_Project
 {
@@ -27,48 +21,73 @@ namespace Bank_Project
             
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void ResetLoginScreen()
         {
-            if (txtBoxUsername.Text == "Admin" && txtBoxPassword.Text == "ahmedHani221")
+            txtBoxUsername.Text = "";
+            txtBoxPassword.Text = "";
+            lblPasswordTrials.Text = "";
+
+            txtBoxUsername.Focus();
+
+            trials = 3;
+        }
+
+        private void txtBox_Validating(object sender, CancelEventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+
+            if (String.IsNullOrEmpty(textBox.Text))
             {
-                MessageBox.Show("Login Successfully", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                MainMenu mm = new MainMenu(txtBoxUsername.Text);
-                mm.Show();
-
-                // You might want to remove this if you're closing the form right after:
-                // txtBoxUsername.Text = "";
-                // txtBoxPassword.Text = "";
-
-                //this.Hide();
-
-                //// MainMenu's FormClosed event to close LoginScreen when MainMenu is closed
-                //mm.FormClosed += (s, args) => this.Close();
+                errorProviderLoginScreen.SetError(textBox, "Required");
             }
             else
             {
-                trials--;
-
-                if (trials > 0)
-                {
-                    lblPasswordTrials.Text = "Invalid Username or Password\nYou have " + trials + " Attempt(s) left before locking your account";
-
-                    txtBoxUsername.Text = "";
-                    txtBoxPassword.Text = "";
-
-                    txtBoxUsername.Focus();
-                }
-                else
-                {
-                    lblPasswordTrials.Text = "Your Account is Locked\nPlease Contact the admin to unlock your account";
-
-                    txtBoxUsername.Enabled = false;
-                    txtBoxPassword.Enabled = false;
-                    btnLogin.Enabled = false;
-                }
+                errorProviderLoginScreen.SetError(textBox, null);
             }
         }
 
-        
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                User user = User.Find(txtBoxUsername.Text, txtBoxPassword.Text);
+                if (user != null)
+                {
+                    MainMenu mm = new MainMenu(user);
+
+                    ResetLoginScreen();
+
+                    mm.Show();
+                }
+                else
+                {
+                    trials--;
+
+                    if (trials > 0)
+                    {
+                        lblPasswordTrials.Text = "Invalid Username or Password\nYou have " + trials + " Attempt(s) left before locking your account";
+
+                        txtBoxUsername.Text = "";
+                        txtBoxPassword.Text = "";
+
+                        txtBoxUsername.Focus();
+                    }
+                    else
+                    {
+                        ResetLoginScreen();
+
+                        lblPasswordTrials.Text = "Your Account is Locked\nPlease Contact the admin to unlock your account";
+
+                        txtBoxUsername.Enabled = false;
+                        txtBoxPassword.Enabled = false;
+                        btnLogin.Enabled = false;
+                    }
+                }
+            }
+            catch(Exception ex) 
+            {
+                MessageBox.Show($"An error occurred while login: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

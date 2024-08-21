@@ -40,11 +40,11 @@
             this.lblUsername = new System.Windows.Forms.Label();
             this.lblPasswordTrials = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderLoginScreen = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BankPicBox)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderLoginScreen)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -118,6 +118,7 @@
             this.txtBoxPassword.Size = new System.Drawing.Size(152, 28);
             this.txtBoxPassword.TabIndex = 3;
             this.txtBoxPassword.UseSystemPasswordChar = true;
+            this.txtBoxPassword.Validating += new System.ComponentModel.CancelEventHandler(this.txtBox_Validating);
             // 
             // txtBoxUsername
             // 
@@ -126,6 +127,7 @@
             this.txtBoxUsername.Name = "txtBoxUsername";
             this.txtBoxUsername.Size = new System.Drawing.Size(152, 28);
             this.txtBoxUsername.TabIndex = 2;
+            this.txtBoxUsername.Validating += new System.ComponentModel.CancelEventHandler(this.txtBox_Validating);
             // 
             // lblPassword
             // 
@@ -168,12 +170,13 @@
             this.lblTitle.TabIndex = 3;
             this.lblTitle.Text = "Welcome To AM Bank";
             // 
-            // errorProvider1
+            // errorProviderLoginScreen
             // 
-            this.errorProvider1.ContainerControl = this;
+            this.errorProviderLoginScreen.ContainerControl = this;
             // 
             // LoginScreen
             // 
+            this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
@@ -191,7 +194,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.BankPicBox)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderLoginScreen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -209,7 +212,7 @@
         private System.Windows.Forms.PictureBox BankPicBox;
         private System.Windows.Forms.Label lblPasswordTrials;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProviderLoginScreen;
         private System.Windows.Forms.Label lbldateTime;
     }
 }
