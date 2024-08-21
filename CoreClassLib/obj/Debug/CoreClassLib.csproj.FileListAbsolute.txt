@@ -1,0 +1,6 @@
+E:\Projects\VSC C#\CoreClassLib\bin\Debug\CoreClassLib.dll
+E:\Projects\VSC C#\CoreClassLib\bin\Debug\CoreClassLib.pdb
+E:\Projects\VSC C#\CoreClassLib\obj\Debug\CoreClassLib.csproj.AssemblyReference.cache
+E:\Projects\VSC C#\CoreClassLib\obj\Debug\CoreClassLib.csproj.CoreCompileInputs.cache
+E:\Projects\VSC C#\CoreClassLib\obj\Debug\CoreClassLib.dll
+E:\Projects\VSC C#\CoreClassLib\obj\Debug\CoreClassLib.pdb
