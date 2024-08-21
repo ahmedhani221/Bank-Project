@@ -31,8 +31,6 @@ The system currently uses file-based data handling with plans for future databas
   - Update exchange rates according to USD.
   - Currency calculator for converting between currencies.
 
-## Installation
-
 ## Technologies Used
 - C#
 - Windows Forms
